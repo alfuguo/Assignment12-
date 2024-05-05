@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS `order` (
     FOREIGN KEY (customer_id)
         REFERENCES customer (customer_id)
 );
-
 CREATE TABLE IF NOT EXISTS `pizza_order` (
     `order_id` INT NOT NULL,
     `pizza_id` INT NOT NULL,
@@ -53,7 +52,7 @@ SELECT
 FROM
     `customer`;    
 
-INSERT INTO `order` (`customer_id`, `order_date`) VALUES (1, '2023-09-10 09:47:00');
+INSERT INTO `order` (`customer_id`, `order_date`) VALUES(1, '2023-09-10 09:47:00');
 INSERT INTO `order` (`customer_id`, `order_date`) VALUES(2, '2023-09-10 13:20:00');
 INSERT INTO `order` (`customer_id`, `order_date`) VALUES(1, '2023-09-10 09:47:00');
 INSERT INTO `order` (`customer_id`, `order_date`) VALUES(2, '2023-10-10 10:37:00');
@@ -74,6 +73,7 @@ SELECT
     *
 FROM
     `pizza_order`;
+
 
 -- How much money each individual customer has spent
 
