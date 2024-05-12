@@ -96,7 +96,7 @@ GROUP BY c.customer_id , c.customer_name;
 
 SELECT 
     c.customer_name,
-    o.order_date,
+    DATE(o.order_date) AS order_date,
     SUM(p.pizza_price * po.quantity) AS total_spent
 FROM
     `customer` c
@@ -105,6 +105,6 @@ FROM
         JOIN
     `pizza_order` po ON o.order_id = po.order_id
         JOIN
-   `pizza` p ON po.pizza_id = p.pizza_id
-GROUP BY c.customer_name , o.order_date;
+    `pizza` p ON po.pizza_id = p.pizza_id
+GROUP BY c.customer_name , DATE(o.order_date);
 
